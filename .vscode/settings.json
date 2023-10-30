@@ -3,6 +3,7 @@
         "cond",
         "dbaeumer",
         "devcontainers",
+        "Parens",
         "tsbuildinfo"
     ]
 }

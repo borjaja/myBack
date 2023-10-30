@@ -5,18 +5,19 @@
 
 'use strict';
 
-import express from "express";
-
+import express from 'express';
+import 'dotenv/config';
+import getEnv from './config/getEnv';
 
 // Constants
-const PORT = 3000;
-const HOST = '0.0.0.0';
+const PORT = getEnv({ key: 'PORT', value: '3000' });
+const HOST = getEnv({ key: 'PORT', value: '0.0.0.0' });
 
 // App
 const app = express();
 app.get('/', (req, res) => {
-	res.send('Hello remote world!\n');
+  res.send('Hello remote world!\n');
 });
 
-app.listen(PORT, HOST);
+app.listen(Number(PORT), HOST);
 console.log(`Running on http://${HOST}:${PORT}`);
